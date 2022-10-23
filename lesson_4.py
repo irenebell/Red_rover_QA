@@ -102,3 +102,13 @@ def correct_polish_letters(st):
     return st.translate(str.maketrans('ąćęłńóśźż', 'acelnoszz'))
 
 print(correct_polish_letters("Jędrzej Błądziński"))
+
+
+def next_item(xs, item):
+    it = iter(xs)
+    for i in it:
+        if i == item:
+            break
+    return next(it, None)
+
+print(next_item([1, 2, 3, 4, 5, 6, 7, 8], 5))
