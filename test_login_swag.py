@@ -1,7 +1,7 @@
 import time
-import pytest
-from setuptools import _distutils
-from webbrowser import BaseBrowser
+# import pytest
+# from setuptools import _distutils
+# from webbrowser import BaseBrowser
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -12,9 +12,11 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 driver.get('https://www.saucedemo.com/')
 
+
 def test_title():
     title_site = driver.title
     assert title_site == 'Swag Labs'
+
 
 def test_login_form():
     user_name = driver.find_element(By.ID, 'user-name')
@@ -30,4 +32,3 @@ def test_login_form():
     assert driver.current_url == 'https://www.saucedemo.com/inventory.html', 'Error, another site'
 
     driver.quit()
-

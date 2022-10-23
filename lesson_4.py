@@ -97,3 +97,8 @@ def move_zeros(lst):
 
 
 print(move_zeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]))
+
+def correct_polish_letters(st):
+    return st.translate(str.maketrans('ąćęłńóśźż', 'acelnoszz'))
+
+print(correct_polish_letters("Jędrzej Błądziński"))
